@@ -1,0 +1,53 @@
+Aufgabe 1: Erweiterter Euklidischer Algorithmus
+    Als warm-up Aufgabe implementieren Sie den Erweiterten Euklidischen Algorithmus in
+    einer Sprache Ihrer Wahl. Des weiteren sollen Sie Ihre Implementierung verwenden, um
+    den ggT von Ihrer Matrikelnummer und der Zahl 2024 zu berechnen. Ihr Programm muss
+    das Ergebnis sowie alle Zwischenschritte gut leserlich in der Konsole ausgeben.
+
+Aufgabe 3: Blockchiffren
+    In dieser Aufgabe werden Sie verschiedene Modi von Blockchiffren implementieren. Verschlüsseln
+    Sie in jeder Teilaufgabe den Klartext ”Das CSS Team wuenscht Ihnen einen
+    guten Rutsch ins neue Jahr! Wir freuen uns Sie in 2024 wieder zu sehen.” (105 Zeichen)
+    in dem jeweiligen Modus. Jedes Zeichen wird hierbei im ASCII Format kodiert (8 Bit
+    pro Zeichen). Die Blockgröße beträgt 7 Zeichen (56 Bit) und als Schlüssel verwenden Sie
+    Ihre Matrikelnummer (auch als String in ASCII kodiert und nicht als Integer). Als
+    Verschlüsselungsfunktion verwenden Sie XOR. Der IV, falls er gebraucht wird, ist die Zahl
+    0 in 56 Bit kodiert.
+    (a) Electronic Code Book (ECB) Modus
+    (b) Cipher Block Chaining (CBC) Modus
+    (c) Counter (CTR) Modus
+
+Aufgabe 4: Sicherheit von RSA
+    In dieser Aufgabe beschäftigen wir uns mit dem Einfluss des Faktorisierungsmodulus N
+    auf die Sicherheit von RSA. Gegeben ist der öffentliche 128-bit RSA Schlüssel pk = (e,N)
+    mit e = 65537 und N = 170158346318205037813391079914939294003. Zur Berechnung
+    einzelner Rechenschritte dürfen Hilfsmittel verwendet werden. Es muss ggf. ein geeingnetes
+    Tool gefunden werden.
+    Hinweis: Achtung, nicht alle Tools liefern korrekte Ergebnisse, überprüfen Sie sie!
+    (a) Bestimmen Sie die beiden Primzahlen p und q aus dem gegebenen N. Verifizieren
+        Sie anschließend ihr Ergebnis.
+    (b) Berechnen Sie die Eulersche Phi-Funktion φ(N).
+    (c) Bestimmen Sie mit den bisherigen Ergebnissen den privaten Schlüssel sk = (d,N).
+    (d) Um zu zeigen, dass der private Schlüssel korrekt berechnet wurde, signieren
+        Sie Ihre Matrikelnummer. Führen Sie die Signaturberechnung ohne das Hashen der
+        Matrikelnummer aus.
+
+Aufgabe 5: Rainbow-Tables mit Salt
+    Sie haben Zugriff auf die Passwortdatenbank eines Passwortmanagers. Die Passwörter sind
+    mit SHA-256 gehasht und jeweils mit einem zufälligen Salt versehen. Dieser Salt wird
+    vor dem Hashen an das Password konkatiniert. Beim Einfügen oder beim Überprüfen von
+    einem Passwort wird also H(Password||Salt) berechnet. Da der Salt zur Überprüfung des
+    Passworts benötigt wird, ist dieser mit dem Passwort zusammen in der Passwortdatenbank
+    in folgender Form gespeichert: $<Hash>$<Salt>.
+    (a) Brechen Sie den Ihnen zugewiesenen Hash aus Passwords 5a.csv mithilfe
+        von einem Rainbow-Table Angriff (Zuweisung erfolgt via Ihrere CSS-ID. Diese entnehmen
+        Sie aus der Moodle-Aktivität ”CSS-ID”). Verwenden Sie folgende Liste mit gängigen Passwörtern:
+        https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou-75.txt
+        Da die Liste knapp 60000 Wörter enthält, ist es für diese und die folgende Teilaufgaben ratsam
+        ein Skript zu schreiben.
+    (b) Der Administrator des Passwortmanagers möchte die Sicherheit erhöhen
+        und wendet die Hashfunktion zufällig zwischen 1 und 100 mal an. Ist es für Sie möglich
+        den Ihnen zugewiesenen Hash aus Passwords 5b.csv zu knacken? Wenn ja, geben
+        Sie das Passwort an.
+        Hinweis: Das Password ist nicht identisch mit dem aus der vorherigen Aufgabe
+    (c) Mit wie vielen Iterationen wurde Ihr Passwort in der Datei Passwords 5b.csv gehasht?
